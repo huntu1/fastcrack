@@ -13,6 +13,6 @@ Fugitif
 
 # issues 
 
-If u have any problem, contact me on whatsapp : https://wa.me/237658078847
+If u have any problem, contact us : teamfugitifdev.h4ck@gmail.com
 
 Thanks!
